@@ -95,9 +95,54 @@ displayed. In this visualization **we cannot find patterns** so it just provides
 
 ## Visualizing 3D data using PyDeck
 * [ColumnLayer](https://deckgl.readthedocs.io/en/latest/gallery/column_layer.html)
+<br>
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(05)%20Discussion%203D%20Visualization%2001.png?raw=true" width="60%">
+        <figcaption>ColumnLayer Using PyDeck Library</figcaption> </center>
+</div>
+<br>
+
+This layer helps users to understand **the comparison between numerical values in various locations**. For example, in Figure (3. A), we can use ColumnLayer to show the number of waste piles per day in tons in various regencies. Then this layer also provides **interactivity on the map**, allowing users to explore the data further by hovering over the bars. Regarding design, this layer also allows **visual adjustments** such as color, bar height, and other styles, so we can customize the appearance according to our needs and visual preferences.
+
+Based on fig. (3. A), we can see the regencies with **the highest number of piles of waste**, such as **Jakarta Timur** Regency, **Tangerang**, **Bekasi**, **Jakarta Barat** and **Jakarta Selatan** Regency. On Kalimantan Island, **Samarinda** Regency in East Kalimantan Province is the area that produces the most piles of waste (587.25 tons/day). On Sumatra Island, the highest production is in **Medan** Regency in North Sumatra Province (1722.6 tons/day). On Sulawesi Island, the highest production is in **Bone** Regency, South Sulawesi Province (405.8 tons/day). And on Papua Island, the highest production is in **Jayapura** Regency in Papua Province (217.9 tons/day)
+
 * [GridLayer](https://deckgl.readthedocs.io/en/latest/gallery/grid_layer.html)
+<br>
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(06)%20Discussion%203D%20Visualization%2002.png?raw=true" width="60%">
+        <figcaption>GridLayer Using PyDeck Library</figcaption> </center>
+</div>
+<br>
+
+GridLayer shows **the data intensity** in various provinces. Each tile on the grid is represented by a specific numerical value, and the color of the grid will reflect that intensity level and help in **analyzing data distribution patterns across the map**. This gridlayer allows **visual adjustments** as well such as color, grid density, and other styles, so we can customize the appearance according to our visual needs and preferences.
+
+Based on Figure (3. B), we can see the provinces with **the highest number of workers/laborers in managing waste, household waste, industry, food waste, water and remediation**, such as the **Jawa Barat** Province, **Jawa Timur**, **Jawa Tengah**, **DKI Jakarta**, **Banten**, **Sumatera Utara**, and **Riau** Province. On Kalimantan Island, **Kalimantan Selatan** Province is the area with the largest number of workers (2416 people from 11 regencies). On the island of Sumatra, the highest productivity is in **Sumatera Utara** Province (7675 people from 18 regencies). And on Sulawesi Island, the highest productivity is in **Sulawesi Selatan** Province (3791 people from 17 regencies).
+
 * [HeatmapLayer](https://deckgl.readthedocs.io/en/latest/gallery/heatmap_layer.html)
+<br>
+
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(07)%20Discussion%203D%20Visualization%2003.png?raw=true" width="60%">
+        <figcaption>HeatmapLayer Using PyDeck Library</figcaption> </center>
+</div>
+
+<br>
+
+Visualization of **the density or intensity of data** on a map can also be represented by HeatmapLayer. Each area on the map is colored to reflect the level of concern from the 'wasteperday' data in each regencies. It can be seen from Figure 3. C, on the island of Java, the reddest data (areas **with high levels of concern**) are in the **Jawa Barat** and **Jawa Timur** Provinces, then move to the east (**Jawa Tengah** to **Bali** Province). Meanwhile, on Sumatra Island, there are 4 points, they are **Medan** Regency in Sumatera Utara Province, **Pekanbaru** Regency in Riau Province, **Batam** Regency in Kepulauan Riau Province, and **Palembang** Regency in Sumatera Selatan Province. These are the areas that **require more regular handling and intensive treatment** by **increasing the number of workers/laborers and waste management sites/banks**, as well as **triggering local and national government for creating local regulations that regulate waste production** so that the environment in those areas is maintained.
+
 * [ScatterplotLayer](https://deckgl.readthedocs.io/en/latest/gallery/scatterplot_layer.html)
+<br>
+
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(08)%20Discussion%203D%20Visualization%2004.png?raw=true" width="60%">
+        <figcaption>ScatterplotLayer Using PyDeck Library</figcaption> </center>
+</div>
+
+<br>
+
+ScatterplotLayer helps in **understanding the spatial distribution patterns** of a collection of data points. This layer provides a **level of interactivity** that allows users to explore the data further by hovering the cursor or performing other interactions on the map.
+
+Based on figure (3.D), we can see the provinces with **the highest number of UMK’s**, such as **Jawa Barat** Province (21648 UMK’s), **Jawa Timur** (17080), **Jawa Tengah** (14176), **DKI Jakarta** (7864) and **Sumatera Utara** (4448). On Kalimantan Island, **Kalimantan Selatan** Province is the area the highest number of UMK’s **related to the management of industrial, water, household waste, food waste and remediation** (1490). On Sumatra Island, the highest number is in **Sumatera Utara** Province (4448). And on Sulawesi Island, the highest number is in **Sulawesi Selatan** Province (1823).
 
 ### Weak points and advantages of using Pydeck in 3D data visualization
 

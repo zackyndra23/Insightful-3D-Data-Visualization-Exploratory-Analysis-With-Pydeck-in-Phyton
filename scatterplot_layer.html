@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": -10,
+    "latitude": -2.2331,
+    "longitude": 117.2841,
+    "maxZoom": 15,
+    "minZoom": 4,
+    "pitch": 20,
+    "zoom": 2
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "coordinates_prov": [
+            97.0253,
+            4.36855
+          ],
+          "latitude_prov": 4.36855,
+          "longitude_prov": 97.0253,
+          "prov_perc": 1.64,
+          "province": "ACEH",
+          "province_id": 11,
+          "umk_count": 494,
+          "wasteperday_count": 1640.1,
+          "workers_count": 869
+        },
+        {
+          "coordinates_prov": [
+            99.38122,
+            2.19235
+          ],
+          "latitude_prov": 2.19235,
+          "longitude_prov": 99.38122,
+          "prov_perc": 5.29,
+          "province": "SUMATERA UTARA",
+          "province_id": 12,
+          "umk_count": 4448,
+          "wasteperday_count": 5280.43,
+          "workers_count": 7675
+        },
+        {
+          "coordinates_prov": [
+            100.0761,
+            -1.34225
+          ],
+          "latitude_prov": -1.34225,
+          "longitude_prov": 100.0761,
+          "prov_perc": 2.63,
+          "province": "SUMATERA BARAT",
+          "province_id": 13,
+          "umk_count": 1013,
+          "wasteperday_count": 2625.3,
+          "workers_count": 2057
+        },
+        {
+          "coordinates_prov": [
+            101.54758,
+            0.50041
+          ],
+          "latitude_prov": 0.50041,
+          "longitude_prov": 101.54758,
+          "prov_perc": 2.61,
+          "province": "RIAU",
+          "province_id": 14,
+          "umk_count": 2110,
+          "wasteperday_count": 2608.1,
+          "workers_count": 4193
+        },
+        {
+          "coordinates_prov": [
+            102.7797,
+            -1.61157
+          ],
+          "latitude_prov": -1.61157,
+          "longitude_prov": 102.7797,
+          "prov_perc": 0.97,
+          "province": "JAMBI",
+          "province_id": 15,
+          "umk_count": 941,
+          "wasteperday_count": 965.7,
+          "workers_count": 1730
+        },
+        {
+          "coordinates_prov": [
+            104.09306,
+            -3.12668
+          ],
+          "latitude_prov": -3.12668,
+          "longitude_prov": 104.09306,
+          "prov_perc": 3.21,
+          "province": "SUMATERA SELATAN",
+          "province_id": 16,
+          "umk_count": 1588,
+          "wasteperday_count": 3201.74,
+          "workers_count": 3206
+        },
+        {
+          "coordinates_prov": [
+            102.53598,
+            -3.51868
+          ],
+          "latitude_prov": -3.51868,
+          "longitude_prov": 102.53598,
+          "prov_perc": 0.38,
+          "province": "BENGKULU",
+          "province_id": 17,
+          "umk_count": 488,
+          "wasteperday_count": 375.43,
+          "workers_count": 766
+        },
+        {
+          "coordinates_prov": [
+            105.0273,
+            -4.8555
+          ],
+          "latitude_prov": -4.8555,
+          "longitude_prov": 105.0273,
+          "prov_perc": 2.17,
+          "province": "LAMPUNG",
+          "province_id": 18,
+          "umk_count": 1874,
+          "wasteperday_count": 2168.99,
+          "workers_count": 3011
+        },
+        {
+          "coordinates_prov": [
+            107.58394,
+            -2.75775
+          ],
+          "latitude_prov": -2.75775,
+          "longitude_prov": 107.58394,
+          "prov_perc": 0.34,
+          "province": "KEPULAUAN BANGKA BELITUNG",
+          "province_id": 19,
+          "umk_count": 264,
+          "wasteperday_count": 340.62,
+          "workers_count": 536
+        },
+        {
+          "coordinates_prov": [
+            104.58037,
+            -0.15478
+          ],
+          "latitude_prov": -0.15478,
+          "longitude_prov": 104.58037,
+          "prov_perc": 1.61,
+          "province": "KEPULAUAN RIAU",
+          "province_id": 21,
+          "umk_count": 1050,
+          "wasteperday_count": 1606.73,
+          "workers_count": 1557
+        },
+        {
+          "coordinates_prov": [
+            106.8451,
+            -6.2115
+          ],
+          "latitude_prov": -6.2115,
+          "longitude_prov": 106.8451,
+          "prov_perc": 8.54,
+          "province": "DKI JAKARTA",
+          "province_id": 31,
+          "umk_count": 7864,
+          "wasteperday_count": 8527.07,
+          "workers_count": 14925
+        },
+        {
+          "coordinates_prov": [
+            107.64047,
+            -6.88917
+          ],
+          "latitude_prov": -6.88917,
+          "longitude_prov": 107.64047,
+          "prov_perc": 13.42,
+          "province": "JAWA BARAT",
+          "province_id": 32,
+          "umk_count": 21648,
+          "wasteperday_count": 13410.01,
+          "workers_count": 45162
+        },
+        {
+          "coordinates_prov": [
+            110.00441,
+            -7.30324
+          ],
+          "latitude_prov": -7.30324,
+          "longitude_prov": 110.00441,
+          "prov_perc": 15.52,
+          "province": "JAWA TENGAH",
+          "province_id": 33,
+          "umk_count": 14176,
+          "wasteperday_count": 15500.91,
+          "workers_count": 26630
+        },
+        {
+          "coordinates_prov": [
+            110.3695,
+            7.7956
+          ],
+          "latitude_prov": 7.7956,
+          "longitude_prov": 110.3695,
+          "prov_perc": 0.86,
+          "province": "D.I. YOGYAKARTA",
+          "province_id": 34,
+          "umk_count": 1260,
+          "wasteperday_count": 858.2,
+          "workers_count": 3206
+        },
+        {
+          "coordinates_prov": [
+            113.98005,
+            -6.96851
+          ],
+          "latitude_prov": -6.96851,
+          "longitude_prov": 113.98005,
+          "prov_perc": 13.82,
+          "province": "JAWA TIMUR",
+          "province_id": 35,
+          "umk_count": 17080,
+          "wasteperday_count": 13801.5,
+          "workers_count": 35477
+        },
+        {
+          "coordinates_prov": [
+            106.13756,
+            -6.44538
+          ],
+          "latitude_prov": -6.44538,
+          "longitude_prov": 106.13756,
+          "prov_perc": 7.21,
+          "province": "BANTEN",
+          "province_id": 36,
+          "umk_count": 3645,
+          "wasteperday_count": 7199.63,
+          "workers_count": 8179
+        },
+        {
+          "coordinates_prov": [
+            115.12239,
+            -8.23566
+          ],
+          "latitude_prov": -8.23566,
+          "longitude_prov": 115.12239,
+          "prov_perc": 2.82,
+          "province": "BALI",
+          "province_id": 51,
+          "umk_count": 1164,
+          "wasteperday_count": 2814.89,
+          "workers_count": 3690
+        },
+        {
+          "coordinates_prov": [
+            117.63696,
+            -8.12179
+          ],
+          "latitude_prov": -8.12179,
+          "longitude_prov": 117.63696,
+          "prov_perc": 2.23,
+          "province": "NUSA TENGGARA BARAT",
+          "province_id": 52,
+          "umk_count": 1143,
+          "wasteperday_count": 2232.33,
+          "workers_count": 1833
+        },
+        {
+          "coordinates_prov": [
+            120.69786,
+            -8.56568
+          ],
+          "latitude_prov": -8.56568,
+          "longitude_prov": 120.69786,
+          "prov_perc": 0.31,
+          "province": "NUSA TENGGARA TIMUR",
+          "province_id": 53,
+          "umk_count": 1014,
+          "wasteperday_count": 312.79,
+          "workers_count": 2099
+        },
+        {
+          "coordinates_prov": [
+            111.09689,
+            -0.13224
+          ],
+          "latitude_prov": -0.13224,
+          "longitude_prov": 111.09689,
+          "prov_perc": 1.28,
+          "province": "KALIMANTAN BARAT",
+          "province_id": 61,
+          "umk_count": 422,
+          "wasteperday_count": 1277.13,
+          "workers_count": 847
+        },
+        {
+          "coordinates_prov": [
+            113.29033,
+            -1.49958
+          ],
+          "latitude_prov": -1.49958,
+          "longitude_prov": 113.29033,
+          "prov_perc": 0.98,
+          "province": "KALIMANTAN TENGAH",
+          "province_id": 62,
+          "umk_count": 395,
+          "wasteperday_count": 982.49,
+          "workers_count": 913
+        },
+        {
+          "coordinates_prov": [
+            115.37565,
+            -2.94348
+          ],
+          "latitude_prov": -2.94348,
+          "longitude_prov": 115.37565,
+          "prov_perc": 1.62,
+          "province": "KALIMANTAN SELATAN",
+          "province_id": 63,
+          "umk_count": 1490,
+          "wasteperday_count": 1620.55,
+          "workers_count": 2416
+        },
+        {
+          "coordinates_prov": [
+            116.242,
+            0.78844
+          ],
+          "latitude_prov": 0.78844,
+          "longitude_prov": 116.242,
+          "prov_perc": 2.17,
+          "province": "KALIMANTAN TIMUR",
+          "province_id": 64,
+          "umk_count": 1112,
+          "wasteperday_count": 2169.39,
+          "workers_count": 2224
+        },
+        {
+          "coordinates_prov": [
+            116.911,
+            2.72594
+          ],
+          "latitude_prov": 2.72594,
+          "longitude_prov": 116.911,
+          "prov_perc": 0.06,
+          "province": "KALIMANTAN UTARA",
+          "province_id": 65,
+          "umk_count": 196,
+          "wasteperday_count": 56.87,
+          "workers_count": 318
+        },
+        {
+          "coordinates_prov": [
+            124.09015,
+            0.65557
+          ],
+          "latitude_prov": 0.65557,
+          "longitude_prov": 124.09015,
+          "prov_perc": 1.33,
+          "province": "SULAWESI UTARA",
+          "province_id": 71,
+          "umk_count": 406,
+          "wasteperday_count": 1331.35,
+          "workers_count": 744
+        },
+        {
+          "coordinates_prov": [
+            120.80886,
+            -1.69378
+          ],
+          "latitude_prov": -1.69378,
+          "longitude_prov": 120.80886,
+          "prov_perc": 1.05,
+          "province": "SULAWESI TENGAH",
+          "province_id": 72,
+          "umk_count": 515,
+          "wasteperday_count": 1049.77,
+          "workers_count": 957
+        },
+        {
+          "coordinates_prov": [
+            119.94719,
+            -3.64467
+          ],
+          "latitude_prov": -3.64467,
+          "longitude_prov": 119.94719,
+          "prov_perc": 2.42,
+          "province": "SULAWESI SELATAN",
+          "province_id": 73,
+          "umk_count": 1823,
+          "wasteperday_count": 2413.83,
+          "workers_count": 3791
+        },
+        {
+          "coordinates_prov": [
+            121.72796,
+            -3.54912
+          ],
+          "latitude_prov": -3.54912,
+          "longitude_prov": 121.72796,
+          "prov_perc": 0.63,
+          "province": "SULAWESI TENGGARA",
+          "province_id": 74,
+          "umk_count": 996,
+          "wasteperday_count": 630.81,
+          "workers_count": 1931
+        },
+        {
+          "coordinates_prov": [
+            122.45559,
+            0.71862
+          ],
+          "latitude_prov": 0.71862,
+          "longitude_prov": 122.45559,
+          "prov_perc": 0.41,
+          "province": "GORONTALO",
+          "province_id": 75,
+          "umk_count": 214,
+          "wasteperday_count": 408.69,
+          "workers_count": 344
+        },
+        {
+          "coordinates_prov": [
+            119.3919,
+            -2.49745
+          ],
+          "latitude_prov": -2.49745,
+          "longitude_prov": 119.3919,
+          "prov_perc": 0.13,
+          "province": "SULAWESI BARAT",
+          "province_id": 76,
+          "umk_count": 112,
+          "wasteperday_count": 125.91,
+          "workers_count": 252
+        },
+        {
+          "coordinates_prov": [
+            129.42078,
+            -3.11884
+          ],
+          "latitude_prov": -3.11884,
+          "longitude_prov": 129.42078,
+          "prov_perc": 0.2,
+          "province": "MALUKU",
+          "province_id": 81,
+          "umk_count": 294,
+          "wasteperday_count": 201.0,
+          "workers_count": 491
+        },
+        {
+          "coordinates_prov": [
+            127.97202,
+            0.63012
+          ],
+          "latitude_prov": 0.63012,
+          "longitude_prov": 127.97202,
+          "prov_perc": 0.18,
+          "province": "MALUKU UTARA",
+          "province_id": 82,
+          "umk_count": 33,
+          "wasteperday_count": 184.66,
+          "workers_count": 119
+        },
+        {
+          "coordinates_prov": [
+            139.3835,
+            -6.5008
+          ],
+          "latitude_prov": -6.5008,
+          "longitude_prov": 139.3835,
+          "prov_perc": 0.44,
+          "province": "PAPUA SELATAN",
+          "province_id": 90,
+          "umk_count": 186,
+          "wasteperday_count": 439.72,
+          "workers_count": 461
+        },
+        {
+          "coordinates_prov": [
+            132.90253,
+            -1.38424
+          ],
+          "latitude_prov": -1.38424,
+          "longitude_prov": 132.90253,
+          "prov_perc": 0.21,
+          "province": "PAPUA BARAT",
+          "province_id": 91,
+          "umk_count": 83,
+          "wasteperday_count": 207.16,
+          "workers_count": 208
+        },
+        {
+          "coordinates_prov": [
+            136.5655,
+            -4.5435
+          ],
+          "latitude_prov": -4.5435,
+          "longitude_prov": 136.5655,
+          "prov_perc": 0.44,
+          "province": "PAPUA TENGAH",
+          "province_id": 92,
+          "umk_count": 186,
+          "wasteperday_count": 439.72,
+          "workers_count": 461
+        },
+        {
+          "coordinates_prov": [
+            131.5166,
+            -1.1
+          ],
+          "latitude_prov": -1.1,
+          "longitude_prov": 131.5166,
+          "prov_perc": 0.44,
+          "province": "PAPUA BARAT DAYA",
+          "province_id": 93,
+          "umk_count": 186,
+          "wasteperday_count": 439.72,
+          "workers_count": 461
+        },
+        {
+          "coordinates_prov": [
+            138.34853,
+            -3.98857
+          ],
+          "latitude_prov": -3.98857,
+          "longitude_prov": 138.34853,
+          "prov_perc": 0.44,
+          "province": "PAPUA",
+          "province_id": 94,
+          "umk_count": 186,
+          "wasteperday_count": 439.72,
+          "workers_count": 461
+        }
+      ],
+      "filled": true,
+      "getFillColor": [
+        255,
+        140,
+        0
+      ],
+      "getLineColor": [
+        0,
+        0,
+        0
+      ],
+      "getPosition": "@@=coordinates_prov",
+      "getRadius": "@@=umk_count",
+      "id": "5282835e-9395-46cd-897d-9be136b60b81",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.8,
+      "pickable": true,
+      "radiusMaxPixels": 100,
+      "radiusMinPixels": 1,
+      "radiusScale": 5,
+      "stroked": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'html': "<span style='color: blue;'>{province}</span> Province <br> There are <span style='color: red;'>{umk_count}</span> UMK's and <span style='color: red;'>{workers_count}</span> workers, producing <span style='color: red;'>{wasteperday_count}</span> (<span style='color: orange;'>{prov_perc}</span>% national) tons of waste per day", 'style': {'background': 'grey', 'color': 'white', 'font-family': '"Helvetica Neue", Arial', 'z-index': '10000'}};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>

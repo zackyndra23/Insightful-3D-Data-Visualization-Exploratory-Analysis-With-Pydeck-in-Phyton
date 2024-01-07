@@ -64,6 +64,34 @@ Data visualization in three dimensions provides a richer and deeper perspective.
 # Discussion
 
 ## 2D Visualisation Using Folium and Plotly Library
+<br>
+
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(03)%20Discussion%202D%20Visualization%2001.png?raw=true" width="60%">
+        <figcaption>Folium Vs Plotly Library 2D Choropleth Map</figcaption> </center>
+    </a>
+</div>
+
+<br>
+
+Figure. 1. A is the result of a 2D choropleth map from the Folium Library while Fig. 1. B. is the result of the Plotly Library. The difference between those two
+is **the level of interactivity**. Fig. 1. B, when the cursor is moved to the chosen province, it will show information on the number of waste piles per day in
+tons and also the name of the province. Meanwhile, Figure before can only be interpreted using the color index so that **provincial interpretation errors can
+occur**. Then, from the level of color difference, fig. 1.B is **more distinguishable** than Fig. 1.A.
+
+<br>
+
+<div style="text-align:center;">
+    <center><img src="https://github.com/zackyndra23/Insightful-3D-Data-Visualization-Exploratory-Analysis-With-Pydeck-in-Phyton/blob/main/(04)%20Discussion%202D%20Visualization%2002.png?raw=true" width="60%">
+        <figcaption>Regencies Detail Information Map Using Folium Library</figcaption> </center>
+    </a>
+</div>
+
+<br>
+
+In this fig, using the Folium Library is quite **interactive**, when we click on the icon for the selected regency, it shows information on 3 parameters (number
+of waste piles, number UMK’s, and the number of workers/laborers). **Additional provincial and national percentage information data** can also be added and
+displayed. In this visualization **we cannot find patterns** so it just provides the info from user configuration.
 
 ## Visualizing 3D data using PyDeck
 * [ColumnLayer](https://deckgl.readthedocs.io/en/latest/gallery/column_layer.html)
